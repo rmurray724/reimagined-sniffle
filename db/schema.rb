@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170217030438) do
 
-  create_table "cart1s", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
