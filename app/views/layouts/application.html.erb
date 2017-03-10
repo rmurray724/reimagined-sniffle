@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootcont</title>
+    <title>Class Ruby Page</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,13 +12,19 @@
     <nav class="navbar navbar-success">
   
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">Rachael's Store</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/">Typos</a></li>
-      <li><a href="#">home</a></li>
-      <li><a href="#">help</a></li>
-      <li><a href="#">about</a></li>
+      <li><a href="/">Store</a></li>
+      <li><a href="/static_pages/home">home</a></li>
+      <li><a href="/login">Login</a></li>
+      <% if session[:user_id] %>
+      <li><%= link_to 'Orders', orders_path %></li>
+      <li><%= link_to 'Products', products_path %></li>
+      <li><%= link_to 'Users', users_path %></li>
+      
+      <li><%= button_to 'Logout', logout_path, method: :delete %></li>
+      <% end %>
     </ul>
   
     </nav>
